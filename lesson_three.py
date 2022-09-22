@@ -103,5 +103,19 @@ for i in range(size): # this loop will run 3 times
         print(matrix[i][j], end=" ")
     print() 
 
+
+""" home work:
+X 0 0 0 0 0 0 0 0 
+0 X 0 0 0 0 0 0 0 
+0 0 X 0 0 0 0 0 0 
+0 0 0 X 0 0 0 0 0 
+0 0 0 0 X 0 0 0 0 
+0 0 0 0 0 X 0 0 0 
+0 0 0 0 0 0 X 0 0 
+0 0 0 0 0 0 0 X 0 
+0 0 0 0 0 0 0 0 X 
+"""
+ 
+
  
  
