@@ -49,33 +49,6 @@ dice_dict = {
     |_______|"""
 }
 
-commend = ""
-while False:
-    
-    # get user input
-    commend = input("enter a number of dice you would like to roll or quit to exit: ")
-
-
-    # exit condition
-    if commend.lower() == "quit":
-        print("thanks for playing")
-        break
-    
-    # allowed non-digit first chars
-    prefix = ["-","+"]
-
-    # check if the user entered a number
-    if commend.isdigit() or (commend[1:].isdigit() and commend[0] in prefix):
-        number_of_rolls = abs(int(commend))
-    else:
-        number_of_rolls = 1
-
-    # roll given number of dice    
-    for i in range(number_of_rolls):    
-        dice = randint(1,6)
-        print(dice_dict[dice], end="")
-
-
 
 def dice_builder(n):
     #posible
@@ -96,17 +69,75 @@ def dice_builder(n):
         case 2:    
             dice += left + "\n" + empty + "\n" + right + "\n"
         case 3:
-            pass
+            dice += left + "\n" + mid + "\n" + right + "\n"
         case 4:
-            pass
+            dice += two + "\n" + empty + "\n" + two + "\n"
         case 5:
-            pass
+            dice += two + "\n" + mid + "\n" + two + "\n"
         case 6:
-            pass
+            dice += two + "\n" + two + "\n" + two + "\n"
 
     dice += botton
 
-    print(dice)
+    return dice
 
 
-dice_builder(2)    
+
+# print(*dice2, sep='\n')
+# print(*dice3, sep='\n')
+
+dice_list = []
+for i in range(1, 7):
+    dice_list.append(dice_builder(i).split("\n"))
+
+# print(dice_list)
+
+
+def merge_list(dice_list):
+    number_of_dice = len(dice_list)
+    dice_size = len(dice_list[0])
+    merge_list = []
+    for i in range(dice_size):
+        for j in range(number_of_dice):
+            merge_list.append(dice_list[j][i])
+
+    return merge_list
+
+def print_ndice(dice_list, number):
+    for i in range(len(dice_list)):
+        print(dice_list[i], end='\t')
+        if i % number == 1 and i != 0:
+            print()
+        
+
+def main():
+    commend = ""
+    while True:
+
+        # get user input
+        commend = input("enter a number of dice you would like to roll or quit to exit: ")
+
+
+        # exit condition
+        if commend.lower() == "quit":
+            print("thanks for playing")
+            break
+        
+        # allowed non-digit first chars
+        prefix = ["-","+"]
+
+        # check if the user entered a number
+        if commend.isdigit() or (commend[1:].isdigit() and commend[0] in prefix):
+            number_of_rolls = abs(int(commend))
+        else:
+            number_of_rolls = 1
+
+        # roll given number of dice
+        dice_list = []    
+        for i in range(number_of_rolls):    
+            dice = dice_builder(randint(1,6))
+            dice_list.append(dice)
+
+        print_ndice(merge_list(dice_list), len(dice_list))
+
+main()
