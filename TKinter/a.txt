@@ -1,0 +1,20 @@
+# root.title("Money Making Muchine!")
+# root.resizable(False, False)
+
+# #frame
+# frame = ttk.Frame(root)
+# frame.pack()
+
+
+# #button
+# def button_factory(size):
+#     button_array = []
+#     for i in range(size):
+#         temp = []
+#         for j in range(size):
+#             temp.append(ttk.Button(frame, text=f'({i,j})').grid(row=i, column=0))
+#         button_array.append(temp)
+
+#     return button_array
+
+# btn_matrix = button_factory(9)
