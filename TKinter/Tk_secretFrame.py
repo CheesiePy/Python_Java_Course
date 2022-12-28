@@ -20,6 +20,7 @@ euser = ttk.Entry(frame, width=30)
 secter = ttk.Frame(root)
 luser = ttk.Label(secter, text="Welcome to the secret frame!").grid(row=0, column=0)
 
+
 # secret frame - end
 
 def login():
