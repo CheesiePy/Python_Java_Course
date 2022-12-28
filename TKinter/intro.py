@@ -36,5 +36,9 @@ def show_off():
 # Create a button
 btn = ttk.Button(frame, text="Quit", command=quit).grid(row=5, column=5)
 btn = ttk.Button(frame, text="Showoff", command=show_off).grid(row=5, column=4)
+
+
+btn = ttk.Button(frame, text="Get value", command=get_value).grid(row=5, column=3)
+
 root.mainloop()
 
