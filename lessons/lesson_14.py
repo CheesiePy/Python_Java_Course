@@ -37,6 +37,7 @@ class BankAccunt():
     def deposit(self, amount):
         if(amount > 0):
             self.balance += amount
+            self.balance -= self.fee
 
     def withdraw(self, amount):
         if(amount < 0):
@@ -46,13 +47,15 @@ class BankAccunt():
             return -1
 
         self.balance -= amount
+        self.balance -= self.fee
+
+    
 
 
-
-
-bank_account = BankAccunt(1000, True)
+bank_account = BankAccunt(1000)
 bank_account.deposit(-100)
 bank_account.withdraw(2200)
+
 
 print(bank_account.balance)
 
