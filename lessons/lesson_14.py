@@ -29,24 +29,32 @@
 
 class BankAccunt():
 
-    def __init__(self, first_deposit):
+    def __init__(self, first_deposit=0, od_flag=False, fee=0.5):
         self.balance = first_deposit
+        self.overdraft = od_flag
+        self.fee = fee
 
     def deposit(self, amount):
         if(amount > 0):
             self.balance += amount
 
-    def withrow(self, amount):
-        ## 
-        pass
+    def withdraw(self, amount):
+        if(amount < 0):
+            return -1
+        if(self.balance < amount and self.overdraft == False):
+            print(f"you can withdraw {self.balance}")
+            return -1
+
+        self.balance -= amount
 
 
 
 
-bank_account = BankAccunt(1000)
+bank_account = BankAccunt(1000, True)
 bank_account.deposit(-100)
+bank_account.withdraw(2200)
 
-print(bank_account.shakshoka)
+print(bank_account.balance)
 
 
 
