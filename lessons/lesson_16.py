@@ -54,9 +54,13 @@ print(sum_digits(22222))
 # recursion is a good way to solve problems that can be broken down into smaller problems
     
 def fq(n):
-    if(n == -1):
-        return
-    fq(n-1)
-    print(n)
+    if(n < 0):
+        return "im at the end"
     
-fq(100)
+    fq(n-1)
+    if not n%3 and not n%2:
+        print(n)
+    return None
+    
+
+print(fq(88))
