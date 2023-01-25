@@ -1,7 +1,14 @@
 import random
 
 # List of words for the game
-words = ["python", "programming", "language", "computer", "science"]
+try:
+    read = open("/home/CheesiePy/Documents/GitHub/Python_Java_Course/ex/words.txt", "r")
+    words = read.read().split(" ")
+except:
+    print("file not found")
+    words = ["python", "programming", "language", "computer", "science"]
+
+
 
 # Randomly select a word from the list
 word = random.choice(words)
@@ -35,7 +42,7 @@ while lives > 0:
         print("Incorrect.")
         lives -= 1
 
-        
+
     print("You have {} lives remaining.".format(lives))
     if "_" not in display:
         print("You win!")
