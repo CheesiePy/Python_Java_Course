@@ -52,4 +52,11 @@ print(sum_digits(22222))
 # recursion is when a function calls itself 
 # recursion must have a exit condition so it doesn't go on forever
 # recursion is a good way to solve problems that can be broken down into smaller problems
-
+    
+def fq(n):
+    if(n == -1):
+        return
+    fq(n-1)
+    print(n)
+    
+fq(100)
