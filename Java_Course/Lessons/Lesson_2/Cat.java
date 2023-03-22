@@ -1,3 +1,4 @@
+package Lessons.Lesson_2;
 public class Cat extends Animal{
     int lifes;
 

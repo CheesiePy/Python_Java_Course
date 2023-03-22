@@ -1,3 +1,4 @@
+package Lessons.Lesson_2;
 public class Animal{
     int age;
     String name;
@@ -18,7 +19,7 @@ public class Animal{
 
     @Override
     public String toString() {
-        return "Animal [age=" + age + ", name=" + name + "]";
+        return this.getClass() + " [age=" + age + ", name=" + name + "]";
     }
 
 }

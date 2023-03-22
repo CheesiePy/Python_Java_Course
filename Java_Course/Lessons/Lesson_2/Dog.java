@@ -1,3 +1,4 @@
+package Lessons.Lesson_2;
 public class Dog extends Animal {
 
     String breed;
@@ -17,6 +18,6 @@ public class Dog extends Animal {
 
     @Override
     public String toString() {
-        return "Dog [age=" + age + ", name=" + name + ", breed=" + breed + "]";
+        return "Dog [age= " + age + ", name= " + name + ", breed= " + breed + "]";
     }
 }
