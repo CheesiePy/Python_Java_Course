@@ -1,24 +1,30 @@
 import pygame
 
-# initailize step
 pygame.init() # initailize pygame
 
-screen_width = 500
-screen_height = 500
+screen = pygame.display.set_mode((500, 500))
+player = pygame.Rect(0, 0, 50, 50)
 
+def draw(): # draw function
+    screen.fill((0, 0, 0)) # fill screen with black
+    pygame.draw.rect(screen, (255, 255, 255), player) # draw player
 
-screen = pygame.display.set_mode((screen_width, screen_height))
+def move(): # move function
+    player.x += 1 # move player 1 pixel to the right
 
 # game loop:
-game_run = True
-while game_run:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            game_run = False
-
+game_run = True # game loop flag
+while game_run: # game loop
+    for event in pygame.event.get(): # event loop
+        if event.type == pygame.QUIT: # event handler
+            game_run = False 
     # game logic
-    screen.fill((255, 255, 255))
-    # 
+    move()
+    # draw
+    draw()
+    
     pygame.display.update()
+    # set frame rate
+    pygame.time.delay(10)
 
 pygame.quit()
