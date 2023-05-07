@@ -15,7 +15,7 @@ direction = (0, -1)
 game_over = False
 
 
-screen = pygame.display.set_mode(screen_size)
+screen = pygame.display.set_mode()
 
 
 
